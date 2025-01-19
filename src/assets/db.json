@@ -1,0 +1,28 @@
+{
+  "students": [
+    {
+      "id": "1",
+      "name": "mayank",
+      "mobial": "1234567899",
+      "email": "mk@gmail.com"
+    },
+    {
+      "name": "Ankul",
+      "mobial": "983211111",
+      "email": "ak@gmail.co.in",
+      "id": "2"
+    },
+    {
+      "name": "Customer_panelok",
+      "mobial": "1234567899",
+      "email": "cu@gmail.com",
+      "id": "3"
+    },
+    {
+      "name": "Ansh.",
+      "mobial": "9559516394",
+      "email": "ansh@gmail.com",
+      "id": "4"
+    }
+  ]
+}

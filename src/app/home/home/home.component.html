@@ -1,0 +1,64 @@
+<div class="container">
+  <div class="row mt-3">
+    <div class="col-md-12">
+      <h3>{{formdata ? 'Update Account' : 'Create Account'}} </h3>
+        <form [formGroup]="userForm" (ngSubmit)="onSubmitData()">
+         
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Full Name</label>
+                        <input type="text" class="form-control" id="name" placeholder="Enter Your Name" formControlName="name">
+                      </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="mb-3">
+                        <label for="phone" class="form-label">Phone Number</label>
+                        <!-- <input type="text" class="form-control" id="" placeholder="Enter Your Mobile Number" formControlName="mobial" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');"> -->
+                        <input type="text" class="form-control" id="" placeholder="Enter Your Mobile Number" formControlName="mobial" oninput="this.value = this.value.replace(/[^0-9]/g, '');" maxlength="10" 
+                        pattern="\d*">
+                      </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email ID</label>
+                        <input type="email" class="form-control" id="name" placeholder="Enter Your Email ID" formControlName="email">
+                      </div>
+                </div>
+            </div>
+            <div class="d-flex aling-item-center justify-content-center">
+                <button class="btn btn-primary" type="submit" >{{isUpdateMode ? 'Update' : 'submit'}}</button>
+            </div>
+        </form>
+    </div>
+  </div>
+
+    <hr>
+    <div class="row">
+      <div class="col-md-12">
+        <table id="" class="display table w-100 table-striped table-hover">
+          <thead>
+              <tr>
+                  <th>Name</th>
+                  <th>Mobile No</th>
+                  <th>Email ID</th>
+                  <th>Action</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr *ngFor="let items of item let i = index">
+                  <td>{{items.name}}</td>
+                  <td>{{items.mobial}}</td>
+                  <td>{{items.email}}</td>
+                  <td>
+                    <div class="d-flex aling-item-center">
+                        <button class="btn mx-2"><i class="fa-solid fa-pen-to-square text-primary" (click)="onEditUser(items)"></i></button>
+                        <button class="btn" (click)="deletedata(items.id, i)"><i class="fa-solid fa-trash text-danger"></i></button>
+                    </div>
+                  </td>
+              </tr>
+      </table>
+      </div>
+    </div>
+    <h4>convert  all css file into scss file now aSD</h4>
+</div>

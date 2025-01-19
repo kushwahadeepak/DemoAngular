@@ -1,0 +1,37 @@
+<div class="container">
+<div class="m-5 text-center">
+    <h3 appFetureapp>HostBinding & HostListener function work & test</h3>
+    <h3>HostListener</h3>
+    <h3>HostBinding</h3>
+</div>
+
+
+<div class="text-center mt-5">
+    <p>When we check one radio button one div is open and when we check another radio button another div is open </p>
+   <label>
+    <input type="radio" checked name="option" (click)="selectopion(true)"> check box1
+   </label>
+   <label><input type="radio" name="option" (click)="selectopion(false)"> check box2</label>
+   <div *ngIf="isvalid"> this is a first div </div>
+   <div *ngIf="!isvalid">this is a second div</div>
+     <!-- By using 2 way bindig  this will check-->
+   <label><input type="radio" name="options" [(ngModel)]="selectopt" value="option1"> check box1</label>
+   <label><input type="radio" name="options" [(ngModel)]="selectopt" value="option2"> check box 2</label>
+   <div *ngIf="selectopt === 'option1'">this is the first div</div>
+   <div *ngIf="selectopt === 'option2'">this is the second div</div>
+</div>
+<!-- ---------------- End radio button to show div ----------------------- -->
+<button class="btn btn-primary" (click)="toggel()">toggel</button>
+
+<div class="container" *ngIf="isvisiable">
+this is a testing for toggal effect only
+ <!--representing the MouseEvent  -->
+<button class="btn btn-primary mx-2" (click)="handalclick($event, 'customData')">Click Me</button>
+
+<!-- on click change button name like save and update -->
+<button class="btn btn-primary" (click)="changebtnname()">{{ChangebttonName}}</button>
+
+</div>
+
+<!-- ---------------- End toggel effect ----------------------- -->
+</div>
